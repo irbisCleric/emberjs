@@ -3,4 +3,7 @@
 
 'use strict';
 
-window.Todos = Ember.Application.create();
+Todos.Todo = DS.Model.extend({
+    title: DS.attr('string'),
+    isCompleted: DS.attr('boolean')
+});
