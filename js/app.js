@@ -19,10 +19,6 @@ Welcome.Book = Ember.Object.extend({
 });
 
 Welcome.booksController = Ember.ArrayController.create({
-    content: []
-});
-
-Welcome.booksController = Ember.ArrayController.create({
     content: [],
     loadBooks: function () {
         var self = this;
