@@ -11,12 +11,13 @@
 	<h2>Welcome to Ember.js</h2>
 
 	<script type="text/x-handlebars">
-		{{#view Ember.Button target="App.booksController" action="loadBooks"}}
-			Load Books
+
+		{{#view Ember.Button target="Welcome.booksController" action="loadBooks"}}
+		Load Books
 		{{/view}}
 
-		{{#collection contentBinding="App.booksController" tagName="ul"}}
-			<b>{{content.title}}</b> - {{content.author}}, <i>{{content.genre}}</i>
+		{{#collection contentBinding="Welcome.booksController" tagName="ul"}}
+		<b>{{content.title}}</b> - {{content.author}}, <i>{{content.genre}}</i>
 		{{/collection}}
 	</script>
 

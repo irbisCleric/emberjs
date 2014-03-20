@@ -4,36 +4,32 @@
 
 'use strict';
 
-var App = Ember.Application.create({
+var Welcome = {};
+
+Welcome = Ember.Application.create({
     ready: function () {
-//        console.log('Мы это сделали!');
+//        alert('you did it!');
     }
 });
 
-App.Book = Ember.Object.extend({
+Welcome.Book = Ember.Object.extend({
     title: null,
     author: null,
     genre: null
 });
 
-App.booksController = Ember.ArrayController.create({
+Welcome.booksController = Ember.ArrayController.create({
+    content: []
+});
+
+Welcome.booksController = Ember.ArrayController.create({
     content: [],
     loadBooks: function () {
         var self = this;
         $.getJSON('data/books.json', function (data) {
             data.forEach(function (item) {
-                self.pushObject(App.Book.create(item));
+                self.pushObject(Welcome.Book.create(item));
             });
         });
     }
 });
-
-/*App.Router.map(function () {
-    // put your routes here
-});
-
-App.IndexRoute = Ember.Route.extend({
-    model: function () {
-        return ['red', 'yellow', 'blue'];
-    }
-});*/
